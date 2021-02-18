@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>CapstoneTranslator</RootNamespace>
+    <UserSecretsId>c41cba9e-7493-41df-9bbe-f53fd4c4f4b0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210217221702_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210217221702_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210218113208_Initialmigrate.cs" />
+    <Compile Remove="Migrations\20210218113208_Initialmigrate.Designer.cs" />
+    <Compile Remove="Migrations\20210218115050_InitialCreate.cs" />
+    <Compile Remove="Migrations\20210218115050_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20210218164629_InitialMigration.cs" />
+    <Compile Remove="Migrations\20210218164629_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210218165337_InitialMigration.cs" />
+    <Compile Remove="Migrations\20210218165337_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\AddIdentity.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+  </ItemGroup>
+
+</Project>
