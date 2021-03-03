@@ -176,8 +176,18 @@ namespace CapstoneTranslator.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    //if (User.IsInRole("admin"))
+                    //{
+                    //    _logger.LogInformation("Employer logged in.");
+                    //    //return LocalRedirect(returnUrl);
+                    //    return RedirectToAction("Add", "Employer");
+                    //}
+                    //else
+                    //{
+                    _logger.LogInformation("Job Seeker logged in.");
+                    //return LocalRedirect(returnUrl);
+                    return RedirectToAction("Detail", "Language");
+                    //}
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -193,10 +203,8 @@ namespace CapstoneTranslator.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }
-            }
-
-            // If we got this far, something failed, redisplay form
-            return Page();
+            }    // If we got this far, something failed, redisplay form
+                return Page();
         }
     }
 }

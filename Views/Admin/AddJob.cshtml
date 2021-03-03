@@ -1,0 +1,89 @@
+﻿@model CapstoneTranslator.ViewModels.AddJobViewModel;
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 20px;
+            font: serif;
+            vertical-align: baseline;
+        }
+
+        body {
+            font: 80% georgia, sans-serif;
+            line-height: 1;
+            color: black;
+            background-color: lightblue;
+            /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
+        }
+
+        p {
+            margin-top: 0;
+            text-align: justify;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        footer {
+            color: black;
+            background-color: whitesmoke;
+        }
+
+        #highlight {
+            background-color: transparent;
+            text-align: center;
+            width: 100%;
+        }
+
+        h3.fontCustom {
+            font: Impact, sans-serif;
+            color: red;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+    </style>
+
+    <h1>Add a Job</h1>
+
+    <form asp-controller="Admin" asp-action="ProcessAddJobForm" method="post">
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EmployerId">Employer</label>
+            <select asp-for="EmployerId" asp-items="@Model.Employers"></select>
+            <span asp-validation-for="Employers"></span>
+            <a asp-controller="Employer" asp-action="Add">Add New Employer</a>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Languages">Languages Required</label>
+            @if (Model.Languages == null)
+            {
+                <p>No Languages yet!</p>
+            }
+            else
+            {
+                @foreach (var Language in @Model.Languages)
+                {
+                    <input type="checkbox" name="selectedLanguages" value="@Language.Id" />
+                    <label>@Language.Name</label>
+                }
+            }
+
+            <a asp-controller="Language" asp-action="Add">Add New Language</a>
+            <span asp-validation-for="Languages"></span>
+        </div>
+
+        <input type="submit" value="Add Job" />
+
+    </form>

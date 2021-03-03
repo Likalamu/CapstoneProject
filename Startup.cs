@@ -85,8 +85,11 @@ namespace CapstoneTranslator
 
             // 21.5.1.1 ConfigureServices() update identity options to require passwords be 10 chars
             services.Configure<IdentityOptions>(options =>
-                options.Password.RequiredLength = 10
-            );
+                options.Password.RequiredLength = 10);
+
+             //services.AddIdentity <IdentityUser, IdentityRole > ()
+             //   .AddDefaultUI(UIFramework.Bootstrap4)
+             //   .AddEntityFrameworkStores();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

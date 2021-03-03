@@ -16,6 +16,10 @@ namespace CapstoneTranslator.Data
         {
         }
 
+        public LanguageDbContext()
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<JobLanguage>()

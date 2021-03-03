@@ -1,0 +1,70 @@
+﻿@model CapstoneTranslator.ViewModels.JobDetailViewModel
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 20px;
+            font: serif;
+            vertical-align: baseline;
+        }
+
+        body {
+            font: 80% georgia, sans-serif;
+            line-height: 1;
+            color: black;
+            background-color: lightblue;
+            /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
+        }
+
+        p {
+            margin-top: 0;
+            text-align: justify;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        footer {
+            color: black;
+            background-color: whitesmoke;
+        }
+
+        #highlight {
+            background-color: transparent;
+            text-align: center;
+            width: 100%;
+        }
+
+        h3.fontCustom {
+            font: Impact, sans-serif;
+            color: red;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+    </style>
+
+    <h1>@Model.Name</h1>
+
+    <table class="table">
+        <tr>
+            <th>Employer</th>
+            <td>@Model.EmployerName</td>
+        </tr>
+        <tr>
+            <th>Languages</th>
+            <td>@Model.LanguageText</td>
+        </tr>
+        <tr>
+            <th>Applicants</th>
+            @*<td>@Model.Name</td*@>
+        </tr>
+
+    </table>
+
+    <a asp-controller="Language" asp-action="AddJob" asp-route-id="@Model.JobId">Add additional Languages</a>

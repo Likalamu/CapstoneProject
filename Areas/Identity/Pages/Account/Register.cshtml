@@ -1,4 +1,4 @@
-@page
+@page 
 @model RegisterModel
 @{
     ViewData["Title"] = "We-Translate";
@@ -13,11 +13,11 @@
         padding: 90px 70px 50px 70px;
         background: rgba(75, 22, 221, 0.60);
     }
-    .background { 
+
+    .background {
         /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
         background-color: lightblue;
     }
-
 </style>
 
 <body class="background">
@@ -62,6 +62,11 @@
                     <span asp-validation-for="Input.Phone" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="Input.Location"></label>
+                    <input asp-for="Input.Location" class="form-control" />
+                    <span asp-validation-for="Input.Location" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="Input.PreferredContact"></label>
                     <input asp-for="Input.PreferredContact" class="form-control" />
                     <span asp-validation-for="Input.PreferredContact" class="text-danger"></span>
@@ -73,8 +78,8 @@
                         <option value="session">Per Session</option>
                     </select>
                     <input for="Pay Rate" required autocomplete="off" />
-    @*<span asp-validation-for="Input.payrate " class="text-danger"></span>*@
-    </div>
+                    @*<span asp-validation-for="Input.payrate " class="text-danger"></span>*@
+                </div>
 
                 <div>
                     <label for="languages">Please Select language(s) you can translate: &nbsp; </label><br>
@@ -86,6 +91,7 @@
                     <label for="Swahili"> Swahili</label> &nbsp;
                     <input type="checkbox" id="Mandarin" name="Mandarin" value="Mandarin">
                     <label for="Mandarin"> Mandarin</label>
+                    <p><a asp-controller="Language" asp-action="Add">Add a Language</a></p>
                 </div>
                 <br>
 
@@ -110,7 +116,3 @@
         <partial name="_ValidationScriptsPartial" />
     }
 </body>
-
-@*@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}*@

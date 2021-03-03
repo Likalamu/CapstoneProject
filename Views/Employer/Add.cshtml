@@ -1,0 +1,77 @@
+﻿@model CapstoneTranslator.ViewModels.AddEmployerViewModel
+
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 20px;
+            font: serif;
+            vertical-align: baseline;
+        }
+
+        body {
+            font: 80% georgia, sans-serif;
+            line-height: 1;
+            color: black;
+            background-color: lightblue;
+            /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
+        }
+
+        p {
+            margin-top: 0;
+            text-align: justify;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        footer {
+            color: black;
+            background-color: whitesmoke;
+        }
+
+        #highlight {
+            background-color: transparent;
+            text-align: center;
+            width: 100%;
+        }
+
+        h3.fontCustom {
+            font: Impact, sans-serif;
+            color: red;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+        }
+    </style>
+
+<h1>Add New Employer</h1>
+
+<form asp-controller="Employer" asp-action="ProcessAddEmployerForm" method="post">
+    <div class="form-group">
+        <label>Employer Name</label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Employer Location</label>
+        <input class="form-control" asp-for="Location" />
+        <span asp-validation-for="Location"></span>
+    </div>
+    <div class="form-group">
+        <label>Employer Pay</label>
+        <input class="form-control" asp-for="Pay" />
+        <span asp-validation-for="Pay"></span>
+    </div>
+    <div class="form-group">
+        <label>Employer Schedule</label>
+        <input class="form-control" asp-for="Schedule" />
+        <span asp-validation-for="Schedule"></span>
+    </div>
+
+    <input type="submit" value="Add Employer" />
+</form>

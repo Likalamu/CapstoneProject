@@ -1,0 +1,63 @@
+﻿@model CapstoneTranslator.ViewModels.AddJobLanguageViewModel
+
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 20px;
+        font: serif;
+        vertical-align: baseline;
+    }
+
+    body {
+        font: 80% georgia, sans-serif;
+        line-height: 1;
+        color: black;
+        background-color: lightblue;
+        /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
+    }
+
+    p {
+        margin-top: 0;
+        text-align: justify;
+        letter-spacing: 1px;
+        line-height: 1.6;
+    }
+
+    footer {
+        color: black;
+        background-color: whitesmoke;
+    }
+
+    #highlight {
+        background-color: transparent;
+        text-align: center;
+        width: 100%;
+    }
+
+    h3.fontCustom {
+        font: Impact, sans-serif;
+        color: red;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+</style>
+
+        <h1>Add Tag to Event: @Model.Job.Name</h1>
+
+        <form asp-controller="Language" asp-action="AddJob" method="post">
+            <input type="hidden" value="@Model.Job.Id" name="JobId" />
+            <div class="form-group">
+                <label asp-for="LanguageId">Language</label>
+                <select asp-for="LanguageId" asp-items="Model.Languages"></select>
+                <span asp-validation-for="LanguageId"></span>
+            </div>
+            <input type="submit" value="Add Language" />
+        </form>
+   

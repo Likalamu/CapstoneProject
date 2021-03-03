@@ -1,0 +1,52 @@
+﻿@model Microsoft.AspNetCore.Identity.IdentityRole
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+<style type="text/css">
+    #tbrole, .c {
+        border: double;
+    }
+</style>
+
+
+@*@using (Html.BeginForm())
+{
+    <table id="tbrole">
+        <tr>
+            <td class="c">Enter Role Name To be Created:</td>
+            <td class="c">*@
+                @*@Html.EditorFor(m => m.Name)*@
+@*</td>
+        </tr>
+    </table>
+    <input type="submit" value="Create Role" />
+}*@

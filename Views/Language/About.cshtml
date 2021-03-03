@@ -1,0 +1,71 @@
+﻿@model List<CapstoneTranslator.Models.JobLanguage>
+
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 20px;
+        font: serif;
+        vertical-align: baseline;
+    }
+
+    body {
+        font: 80% georgia, sans-serif;
+        line-height: 1;
+        color: black;
+        background-color: lightblue;
+        /*background-image: url("https://www.vpr.org/sites/vpr/files/styles/x_large/public/201708/Languages-istock-Qvasimodo-20170803.png");*/
+    }
+
+    p {
+        margin-top: 0;
+        text-align: justify;
+        letter-spacing: 1px;
+        line-height: 1.6;
+    }
+
+    footer {
+        color: black;
+        background-color: whitesmoke;
+    }
+
+    #highlight {
+        background-color: transparent;
+        text-align: center;
+        width: 100%;
+    }
+
+    h3.fontCustom {
+        font: Impact, sans-serif;
+        color: red;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+</style>
+    
+
+        @if (Model.Count == 0)
+        {
+            <h1>No jobs with the given Language!</h1>
+        }
+        else
+        {
+            <h1>Jobs with the Language: @Model[0].Language.Name</h1>
+            <p>Language Description: @Model[0].Language.Description</p>
+
+            <ul>
+                @foreach (var jobLanguage in Model)
+                {
+                    <li>@jobLanguage.Job.Name</li>
+                }
+            </ul>
+
+        }
+
+
